@@ -1,0 +1,2298 @@
+[
+  {
+    "title": "Add Tests for Agents Layer3 Module",
+    "description": "Add unit tests for 108 untested files in the agents/layer3 module.\n\n**Files to test:** 108 files\n\n**Test files to create:**\n- `agents/layer3/test___init__.py`\n- `agents/layer3/test_analytics_agent.py`\n- `agents/layer3/test_arbitrage_agent.py`\n- `agents/layer3/test_architecture_agent.py`\n- `agents/layer3/test_auction_agent.py`\n- ... and 83 more\n\n**Example files to test:**\n- `agents/layer3/__init__.py`\n- `agents/layer3/research/__init__.py`\n- `agents/layer3/research/research_agent.py`\n- `agents/layer3/pm/project_plan_generator.py`\n- `agents/layer3/pm/ticket_refinement_agent.py`\n- ... and 103 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 27.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer3/__init__.py",
+      "agents/layer3/research/__init__.py",
+      "agents/layer3/research/research_agent.py",
+      "agents/layer3/pm/project_plan_generator.py",
+      "agents/layer3/pm/ticket_refinement_agent.py",
+      "agents/layer3/security/security_compliance_agent.py",
+      "agents/layer3/health/health_agent.py",
+      "agents/layer3/health/nutrition_agent.py",
+      "agents/layer3/health/__init__.py",
+      "agents/layer3/business/charity_agent.py"
+    ],
+    "total_files": 108,
+    "test_files_to_create": [
+      "agents/layer3/test___init__.py",
+      "agents/layer3/test_analytics_agent.py",
+      "agents/layer3/test_arbitrage_agent.py",
+      "agents/layer3/test_architecture_agent.py",
+      "agents/layer3/test_auction_agent.py",
+      "agents/layer3/test_audio_agent.py",
+      "agents/layer3/test_blockchain_agent.py",
+      "agents/layer3/test_broker_agent.py",
+      "agents/layer3/test_broker_alpaca_agent.py",
+      "agents/layer3/test_broker_ib_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer3 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Connectors Module",
+    "description": "Add unit tests for 106 untested files in the agents/connectors module.\n\n**Files to test:** 106 files\n\n**Test files to create:**\n- `agents/connectors/test___init__.py`\n- `agents/connectors/test_airbnb_connector_agent.py`\n- `agents/connectors/test_alpaca_connector_agent.py`\n- `agents/connectors/test_alphavantage_connector_agent.py`\n- `agents/connectors/test_amazon_connector_agent.py`\n- ... and 88 more\n\n**Example files to test:**\n- `agents/connectors/google_maps_connector_agent.py`\n- `agents/connectors/uber_connector_agent.py`\n- `agents/connectors/compiler.py`\n- `agents/connectors/deepseek_generator.py`\n- `agents/connectors/deployer.py`\n- ... and 101 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 26.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/connectors/google_maps_connector_agent.py",
+      "agents/connectors/uber_connector_agent.py",
+      "agents/connectors/compiler.py",
+      "agents/connectors/deepseek_generator.py",
+      "agents/connectors/deployer.py",
+      "agents/connectors/apple_music_connector_agent.py",
+      "agents/connectors/contacts_connector_agent.py",
+      "agents/connectors/connector_generator.py",
+      "agents/connectors/__init__.py",
+      "agents/connectors/file_writer.py"
+    ],
+    "total_files": 106,
+    "test_files_to_create": [
+      "agents/connectors/test___init__.py",
+      "agents/connectors/test_airbnb_connector_agent.py",
+      "agents/connectors/test_alpaca_connector_agent.py",
+      "agents/connectors/test_alphavantage_connector_agent.py",
+      "agents/connectors/test_amazon_connector_agent.py",
+      "agents/connectors/test_api_docs_watcher.py",
+      "agents/connectors/test_apple_health_connector_agent.py",
+      "agents/connectors/test_apple_music_connector_agent.py",
+      "agents/connectors/test_asana_connector_agent.py",
+      "agents/connectors/test_bbb_scraper_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/connectors files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer1 Module",
+    "description": "Add unit tests for 91 untested files in the agents/layer1 module.\n\n**Files to test:** 91 files\n\n**Test files to create:**\n- `agents/layer1/test___init__.py`\n- `agents/layer1/test_alpaca_connector_agent.py`\n- `agents/layer1/test_alphavantage_connector_agent.py`\n- `agents/layer1/test_asana_parser_agent.py`\n- `agents/layer1/test_audio_parser_agent.py`\n- ... and 79 more\n\n**Example files to test:**\n- `agents/layer1/__init__.py`\n- `agents/layer1/connectors/__init__.py`\n- `agents/layer1/connectors/financial/news_sentiment_connector_agent.py`\n- `agents/layer1/connectors/financial/plaid_connector_agent.py`\n- `agents/layer1/connectors/financial/__init__.py`\n- ... and 86 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 22.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer1/__init__.py",
+      "agents/layer1/connectors/__init__.py",
+      "agents/layer1/connectors/financial/news_sentiment_connector_agent.py",
+      "agents/layer1/connectors/financial/plaid_connector_agent.py",
+      "agents/layer1/connectors/financial/__init__.py",
+      "agents/layer1/connectors/financial/stripe_connector_agent.py",
+      "agents/layer1/connectors/financial/quickbooks_connector_agent.py",
+      "agents/layer1/connectors/financial/investor_profiles_connector_agent.py",
+      "agents/layer1/connectors/exchanges/coinbase_connector_agent.py",
+      "agents/layer1/connectors/exchanges/__init__.py"
+    ],
+    "total_files": 91,
+    "test_files_to_create": [
+      "agents/layer1/test___init__.py",
+      "agents/layer1/test_alpaca_connector_agent.py",
+      "agents/layer1/test_alphavantage_connector_agent.py",
+      "agents/layer1/test_asana_parser_agent.py",
+      "agents/layer1/test_audio_parser_agent.py",
+      "agents/layer1/test_binance_connector_agent.py",
+      "agents/layer1/test_binanceus_connector_agent.py",
+      "agents/layer1/test_bitfinex_connector_agent.py",
+      "agents/layer1/test_bitget_connector_agent.py",
+      "agents/layer1/test_bithumb_connector_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer1 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Services Module",
+    "description": "Add unit tests for 34 untested files in the services module.\n\n**Files to test:** 34 files\n\n**Test files to create:**\n- `services/test_akashic_file_watcher.py`\n- `services/test_akashic_intelligence_orchestrator.py`\n- `services/test_bidirectional_sync_service.py`\n- `services/test_bitbucket_client.py`\n- `services/test_deployment_config_generator.py`\n- ... and 22 more\n\n**Example files to test:**\n- `services/pm_automation.py`\n- `services/dynamic_model_selector.py`\n- `services/strategy_generator.rs`\n- `services/plaid_client.rs`\n- `services/akashic_intelligence_orchestrator.py`\n- ... and 29 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 8.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "services",
+      "quality"
+    ],
+    "files_affected": [
+      "services/pm_automation.py",
+      "services/dynamic_model_selector.py",
+      "services/strategy_generator.rs",
+      "services/plaid_client.rs",
+      "services/akashic_intelligence_orchestrator.py",
+      "services/stripe_client.rs",
+      "services/pm_bidirectional_sync.py",
+      "services/pm_sync_service.py",
+      "services/project_type_detector.py",
+      "services/scaffold_generator.py"
+    ],
+    "total_files": 34,
+    "test_files_to_create": [
+      "services/test_akashic_file_watcher.py",
+      "services/test_akashic_intelligence_orchestrator.py",
+      "services/test_bidirectional_sync_service.py",
+      "services/test_bitbucket_client.py",
+      "services/test_deployment_config_generator.py",
+      "services/test_deployment_mapper.py",
+      "services/test_deployment_reconciliation.py",
+      "services/test_doc_generator.py",
+      "services/test_doc_to_pm_converter.py",
+      "services/test_docs_consolidator.py"
+    ],
+    "acceptance_criteria": [
+      "All services files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested",
+      "Service dependencies mocked properly",
+      "Error scenarios tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer4 Module",
+    "description": "Add unit tests for 33 untested files in the agents/layer4 module.\n\n**Files to test:** 33 files\n\n**Test files to create:**\n- `agents/layer4/test___init__.py`\n- `agents/layer4/test_api_agent.py`\n- `agents/layer4/test_calendar_agent.py`\n- `agents/layer4/test_code_agent.py`\n- `agents/layer4/test_code_generation_agent.py`\n- ... and 23 more\n\n**Example files to test:**\n- `agents/layer4/__init__.py`\n- `agents/layer4/development/code_generation_agent.py`\n- `agents/layer4/development/github_agent.py`\n- `agents/layer4/development/__init__.py`\n- `agents/layer4/development/code_agent.py`\n- ... and 28 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 8.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer4/__init__.py",
+      "agents/layer4/development/code_generation_agent.py",
+      "agents/layer4/development/github_agent.py",
+      "agents/layer4/development/__init__.py",
+      "agents/layer4/development/code_agent.py",
+      "agents/layer4/development/devops_agent.py",
+      "agents/layer4/development/api_agent.py",
+      "agents/layer4/web/seo_agent.py",
+      "agents/layer4/web/__init__.py",
+      "agents/layer4/web/scraper_agent.py"
+    ],
+    "total_files": 33,
+    "test_files_to_create": [
+      "agents/layer4/test___init__.py",
+      "agents/layer4/test_api_agent.py",
+      "agents/layer4/test_calendar_agent.py",
+      "agents/layer4/test_code_agent.py",
+      "agents/layer4/test_code_generation_agent.py",
+      "agents/layer4/test_compliance_workflow_agent.py",
+      "agents/layer4/test_contact_agent.py",
+      "agents/layer4/test_content_workflow_agent.py",
+      "agents/layer4/test_deployment_workflow_agent.py",
+      "agents/layer4/test_devops_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer4 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer2 Module",
+    "description": "Add unit tests for 25 untested files in the agents/layer2 module.\n\n**Files to test:** 25 files\n\n**Test files to create:**\n- `agents/layer2/test___init__.py`\n- `agents/layer2/test_company_recognition_agent.py`\n- `agents/layer2/test_data_agent.py`\n- `agents/layer2/test_entity_extraction_agent.py`\n- `agents/layer2/test_event_recognition_agent.py`\n- ... and 18 more\n\n**Example files to test:**\n- `agents/layer2/__init__.py`\n- `agents/layer2/recognition/sentiment_recognition_agent.py`\n- `agents/layer2/recognition/company_recognition_agent.py`\n- `agents/layer2/recognition/relationship_recognition_agent.py`\n- `agents/layer2/recognition/topic_recognition_agent.py`\n- ... and 20 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 6.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer2/__init__.py",
+      "agents/layer2/recognition/sentiment_recognition_agent.py",
+      "agents/layer2/recognition/company_recognition_agent.py",
+      "agents/layer2/recognition/relationship_recognition_agent.py",
+      "agents/layer2/recognition/topic_recognition_agent.py",
+      "agents/layer2/recognition/entity_extraction_agent.py",
+      "agents/layer2/recognition/intent_recognition_agent.py",
+      "agents/layer2/recognition/person_recognition_agent.py",
+      "agents/layer2/recognition/location_recognition_agent.py",
+      "agents/layer2/recognition/event_recognition_agent.py"
+    ],
+    "total_files": 25,
+    "test_files_to_create": [
+      "agents/layer2/test___init__.py",
+      "agents/layer2/test_company_recognition_agent.py",
+      "agents/layer2/test_data_agent.py",
+      "agents/layer2/test_entity_extraction_agent.py",
+      "agents/layer2/test_event_recognition_agent.py",
+      "agents/layer2/test_forecast_agent.py",
+      "agents/layer2/test_intent_recognition_agent.py",
+      "agents/layer2/test_location_recognition_agent.py",
+      "agents/layer2/test_materialize_agent.py",
+      "agents/layer2/test_meme_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer2 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Finance Module",
+    "description": "Add unit tests for 23 untested files in the agents/finance module.\n\n**Files to test:** 23 files\n\n**Test files to create:**\n- `agents/finance/test___init__.py`\n- `agents/finance/test_arbitrage_agent.py`\n- `agents/finance/test_broker_agent.py`\n- `agents/finance/test_broker_alpaca_agent.py`\n- `agents/finance/test_broker_ib_agent.py`\n- ... and 18 more\n\n**Example files to test:**\n- `agents/finance/broker_agent.py`\n- `agents/finance/budget_agent.py`\n- `agents/finance/broker_schwab_agent.py`\n- `agents/finance/exchange_kraken_agent.py`\n- `agents/finance/tax_agent.py`\n- ... and 18 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 5.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/finance/broker_agent.py",
+      "agents/finance/budget_agent.py",
+      "agents/finance/broker_schwab_agent.py",
+      "agents/finance/exchange_kraken_agent.py",
+      "agents/finance/tax_agent.py",
+      "agents/finance/forex_agent.py",
+      "agents/finance/__init__.py",
+      "agents/finance/broker_alpaca_agent.py",
+      "agents/finance/sentiment_agent.py",
+      "agents/finance/exchange_coinbase_agent.py"
+    ],
+    "total_files": 23,
+    "test_files_to_create": [
+      "agents/finance/test___init__.py",
+      "agents/finance/test_arbitrage_agent.py",
+      "agents/finance/test_broker_agent.py",
+      "agents/finance/test_broker_alpaca_agent.py",
+      "agents/finance/test_broker_ib_agent.py",
+      "agents/finance/test_broker_schwab_agent.py",
+      "agents/finance/test_broker_td_agent.py",
+      "agents/finance/test_budget_agent.py",
+      "agents/finance/test_exchange_agent.py",
+      "agents/finance/test_exchange_binance_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/finance files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Api Module",
+    "description": "Add unit tests for 22 untested files in the api module.\n\n**Files to test:** 22 files\n\n**Test files to create:**\n- `api/test_agent_api.py`\n- `api/test_akashic_intelligence_endpoints.py`\n- `api/test_chat_endpoints.py`\n- `api/test_code_endpoints.py`\n- `api/test_codebase_endpoints.py`\n- ... and 17 more\n\n**Example files to test:**\n- `api/models_endpoints.py`\n- `api/learning_endpoints.py`\n- `api/smart_router.py`\n- `api/connectors.py`\n- `api/data_ingestion_api.py`\n- ... and 17 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 5.5,
+    "priority": "critical",
+    "labels": [
+      "testing",
+      "api",
+      "quality"
+    ],
+    "files_affected": [
+      "api/models_endpoints.py",
+      "api/learning_endpoints.py",
+      "api/smart_router.py",
+      "api/connectors.py",
+      "api/data_ingestion_api.py",
+      "api/main_smart.py",
+      "api/request_models.py",
+      "api/main_old.py",
+      "api/reconciliation_endpoints.py",
+      "api/workflow_endpoints.py"
+    ],
+    "total_files": 22,
+    "test_files_to_create": [
+      "api/test_agent_api.py",
+      "api/test_akashic_intelligence_endpoints.py",
+      "api/test_chat_endpoints.py",
+      "api/test_code_endpoints.py",
+      "api/test_codebase_endpoints.py",
+      "api/test_conductor_router.py",
+      "api/test_connectors.py",
+      "api/test_data_ingestion_api.py",
+      "api/test_folder_analysis_endpoints.py",
+      "api/test_learning_endpoints.py"
+    ],
+    "acceptance_criteria": [
+      "All api files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested",
+      "API endpoints have integration tests",
+      "Request/response validation tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Learning Module",
+    "description": "Add unit tests for 14 untested files in the learning module.\n\n**Files to test:** 14 files\n\n**Test files to create:**\n- `tests/test_agentic_codebase_rag.py`\n- `tests/test_codebase_indexer.py`\n- `tests/test_codebase_rag.py`\n- `tests/test_continuous_learner.py`\n- `tests/test_deepseek_coder.py`\n- ... and 9 more\n\n**Example files to test:**\n- `learning/deepseek_coder.py`\n- `learning/continuous_learner.py`\n- `learning/theta_trainer.py`\n- `learning/theta_rag_client.py`\n- `learning/agentic_codebase_rag.py`\n- ... and 9 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 3.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "learning",
+      "quality"
+    ],
+    "files_affected": [
+      "learning/deepseek_coder.py",
+      "learning/continuous_learner.py",
+      "learning/theta_trainer.py",
+      "learning/theta_rag_client.py",
+      "learning/agentic_codebase_rag.py",
+      "learning/theta_continuous_learner.py",
+      "learning/theta_edgecloud.py",
+      "learning/jarvislabs_rag_client.py",
+      "learning/workflow_learner.py",
+      "learning/codebase_rag.py"
+    ],
+    "total_files": 14,
+    "test_files_to_create": [
+      "tests/test_agentic_codebase_rag.py",
+      "tests/test_codebase_indexer.py",
+      "tests/test_codebase_rag.py",
+      "tests/test_continuous_learner.py",
+      "tests/test_deepseek_coder.py",
+      "tests/test_hierarchical_trainer.py",
+      "tests/test_jarvis_trainer.py",
+      "tests/test_jarvislabs_rag_client.py",
+      "tests/test_theta_continuous_learner.py",
+      "tests/test_theta_edgecloud.py"
+    ],
+    "acceptance_criteria": [
+      "All learning files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Business Module",
+    "description": "Add unit tests for 12 untested files in the agents/business module.\n\n**Files to test:** 12 files\n\n**Test files to create:**\n- `agents/business/test___init__.py`\n- `agents/business/test_analytics_agent.py`\n- `agents/business/test_charity_agent.py`\n- `agents/business/test_crm_agent.py`\n- `agents/business/test_grant_agent.py`\n- ... and 7 more\n\n**Example files to test:**\n- `agents/business/charity_agent.py`\n- `agents/business/travel_agent.py`\n- `agents/business/analytics_agent.py`\n- `agents/business/hr_agent.py`\n- `agents/business/operations_agent.py`\n- ... and 7 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 3.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/business/charity_agent.py",
+      "agents/business/travel_agent.py",
+      "agents/business/analytics_agent.py",
+      "agents/business/hr_agent.py",
+      "agents/business/operations_agent.py",
+      "agents/business/__init__.py",
+      "agents/business/project_agent.py",
+      "agents/business/crm_agent.py",
+      "agents/business/strategy_agent.py",
+      "agents/business/marketing_agent.py"
+    ],
+    "total_files": 12,
+    "test_files_to_create": [
+      "agents/business/test___init__.py",
+      "agents/business/test_analytics_agent.py",
+      "agents/business/test_charity_agent.py",
+      "agents/business/test_crm_agent.py",
+      "agents/business/test_grant_agent.py",
+      "agents/business/test_hr_agent.py",
+      "agents/business/test_marketing_agent.py",
+      "agents/business/test_operations_agent.py",
+      "agents/business/test_project_agent.py",
+      "agents/business/test_sales_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/business files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Documents Module",
+    "description": "Add unit tests for 12 untested files in the agents/documents module.\n\n**Files to test:** 12 files\n\n**Test files to create:**\n- `agents/documents/test___init__.py`\n- `agents/documents/test_document_agent.py`\n- `agents/documents/test_drive_agent.py`\n- `agents/documents/test_knowledge_agent.py`\n- `agents/documents/test_knowledge_graph_builder.py`\n- ... and 7 more\n\n**Example files to test:**\n- `agents/documents/pdf_agent.py`\n- `agents/documents/document_agent.py`\n- `agents/documents/__init__.py`\n- `agents/documents/notion_agent.py`\n- `agents/documents/wiki_agent.py`\n- ... and 7 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 3.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/documents/pdf_agent.py",
+      "agents/documents/document_agent.py",
+      "agents/documents/__init__.py",
+      "agents/documents/notion_agent.py",
+      "agents/documents/wiki_agent.py",
+      "agents/documents/translation_agent.py",
+      "agents/documents/knowledge_graph_builder.py",
+      "agents/documents/markdown_agent.py",
+      "agents/documents/knowledge_agent.py",
+      "agents/documents/research_agent.py"
+    ],
+    "total_files": 12,
+    "test_files_to_create": [
+      "agents/documents/test___init__.py",
+      "agents/documents/test_document_agent.py",
+      "agents/documents/test_drive_agent.py",
+      "agents/documents/test_knowledge_agent.py",
+      "agents/documents/test_knowledge_graph_builder.py",
+      "agents/documents/test_markdown_agent.py",
+      "agents/documents/test_notion_agent.py",
+      "agents/documents/test_ocr_agent.py",
+      "agents/documents/test_pdf_agent.py",
+      "agents/documents/test_research_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/documents files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Analytics Module",
+    "description": "Add unit tests for 11 untested files in the agents/analytics module.\n\n**Files to test:** 11 files\n\n**Test files to create:**\n- `agents/analytics/test___init__.py`\n- `agents/analytics/test_code_watcher_agent.py`\n- `agents/analytics/test_data_agent.py`\n- `agents/analytics/test_forecast_agent.py`\n- `agents/analytics/test_materialize_agent.py`\n- ... and 6 more\n\n**Example files to test:**\n- `agents/analytics/schema_agent.py`\n- `agents/analytics/text_agent.py`\n- `agents/analytics/report_agent.py`\n- `agents/analytics/code_watcher_agent.py`\n- `agents/analytics/__init__.py`\n- ... and 6 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 2.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/analytics/schema_agent.py",
+      "agents/analytics/text_agent.py",
+      "agents/analytics/report_agent.py",
+      "agents/analytics/code_watcher_agent.py",
+      "agents/analytics/__init__.py",
+      "agents/analytics/router_agent.py",
+      "agents/analytics/materialize_agent.py",
+      "agents/analytics/ml_agent.py",
+      "agents/analytics/metrics_agent.py",
+      "agents/analytics/data_agent.py"
+    ],
+    "total_files": 11,
+    "test_files_to_create": [
+      "agents/analytics/test___init__.py",
+      "agents/analytics/test_code_watcher_agent.py",
+      "agents/analytics/test_data_agent.py",
+      "agents/analytics/test_forecast_agent.py",
+      "agents/analytics/test_materialize_agent.py",
+      "agents/analytics/test_metrics_agent.py",
+      "agents/analytics/test_ml_agent.py",
+      "agents/analytics/test_report_agent.py",
+      "agents/analytics/test_router_agent.py",
+      "agents/analytics/test_schema_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/analytics files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer6 Module",
+    "description": "Add unit tests for 9 untested files in the agents/layer6 module.\n\n**Files to test:** 9 files\n\n**Test files to create:**\n- `agents/layer6/test___init__.py`\n- `agents/layer6/test_auto_healing_agent.py`\n- `agents/layer6/test_auto_scaling_agent.py`\n- `agents/layer6/test_autonomous_agent.py`\n- `agents/layer6/test_connector_generator_agent.py`\n- ... and 4 more\n\n**Example files to test:**\n- `agents/layer6/connector_generator_agent.py`\n- `agents/layer6/proactive_assistant_agent.py`\n- `agents/layer6/__init__.py`\n- `agents/layer6/deployment_agent.py`\n- `agents/layer6/cost_optimizer_agent.py`\n- ... and 4 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 2.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer6/connector_generator_agent.py",
+      "agents/layer6/proactive_assistant_agent.py",
+      "agents/layer6/__init__.py",
+      "agents/layer6/deployment_agent.py",
+      "agents/layer6/cost_optimizer_agent.py",
+      "agents/layer6/auto_scaling_agent.py",
+      "agents/layer6/security_guardian_agent.py",
+      "agents/layer6/auto_healing_agent.py",
+      "agents/layer6/autonomous_agent.py"
+    ],
+    "total_files": 9,
+    "test_files_to_create": [
+      "agents/layer6/test___init__.py",
+      "agents/layer6/test_auto_healing_agent.py",
+      "agents/layer6/test_auto_scaling_agent.py",
+      "agents/layer6/test_autonomous_agent.py",
+      "agents/layer6/test_connector_generator_agent.py",
+      "agents/layer6/test_cost_optimizer_agent.py",
+      "agents/layer6/test_deployment_agent.py",
+      "agents/layer6/test_proactive_assistant_agent.py",
+      "agents/layer6/test_security_guardian_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer6 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Infrastructure Module",
+    "description": "Add unit tests for 9 untested files in the agents/infrastructure module.\n\n**Files to test:** 9 files\n\n**Test files to create:**\n- `agents/infrastructure/test___init__.py`\n- `agents/infrastructure/test_api_version_monitor_agent.py`\n- `agents/infrastructure/test_connection_monitor_agent.py`\n- `agents/infrastructure/test_connector_code_agent.py`\n- `agents/infrastructure/test_connector_monitor_agent.py`\n- ... and 4 more\n\n**Example files to test:**\n- `agents/infrastructure/rate_limit_manager_agent.py`\n- `agents/infrastructure/connection_monitor_agent.py`\n- `agents/infrastructure/api_version_monitor_agent.py`\n- `agents/infrastructure/connector_code_agent.py`\n- `agents/infrastructure/connector_optimization_agent.py`\n- ... and 4 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 2.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/infrastructure/rate_limit_manager_agent.py",
+      "agents/infrastructure/connection_monitor_agent.py",
+      "agents/infrastructure/api_version_monitor_agent.py",
+      "agents/infrastructure/connector_code_agent.py",
+      "agents/infrastructure/connector_optimization_agent.py",
+      "agents/infrastructure/webhook_manager_agent.py",
+      "agents/infrastructure/__init__.py",
+      "agents/infrastructure/full_coverage_agent.py",
+      "agents/infrastructure/connector_monitor_agent.py"
+    ],
+    "total_files": 9,
+    "test_files_to_create": [
+      "agents/infrastructure/test___init__.py",
+      "agents/infrastructure/test_api_version_monitor_agent.py",
+      "agents/infrastructure/test_connection_monitor_agent.py",
+      "agents/infrastructure/test_connector_code_agent.py",
+      "agents/infrastructure/test_connector_monitor_agent.py",
+      "agents/infrastructure/test_connector_optimization_agent.py",
+      "agents/infrastructure/test_full_coverage_agent.py",
+      "agents/infrastructure/test_rate_limit_manager_agent.py",
+      "agents/infrastructure/test_webhook_manager_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/infrastructure files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Media Module",
+    "description": "Add unit tests for 7 untested files in the agents/media module.\n\n**Files to test:** 7 files\n\n**Test files to create:**\n- `agents/media/test___init__.py`\n- `agents/media/test_audio_agent.py`\n- `agents/media/test_content_agent.py`\n- `agents/media/test_image_agent.py`\n- `agents/media/test_music_agent.py`\n- ... and 2 more\n\n**Example files to test:**\n- `agents/media/music_agent.py`\n- `agents/media/video_agent.py`\n- `agents/media/image_agent.py`\n- `agents/media/__init__.py`\n- `agents/media/content_agent.py`\n- ... and 2 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/media/music_agent.py",
+      "agents/media/video_agent.py",
+      "agents/media/image_agent.py",
+      "agents/media/__init__.py",
+      "agents/media/content_agent.py",
+      "agents/media/audio_agent.py",
+      "agents/media/vision_agent.py"
+    ],
+    "total_files": 7,
+    "test_files_to_create": [
+      "agents/media/test___init__.py",
+      "agents/media/test_audio_agent.py",
+      "agents/media/test_content_agent.py",
+      "agents/media/test_image_agent.py",
+      "agents/media/test_music_agent.py",
+      "agents/media/test_video_agent.py",
+      "agents/media/test_vision_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/media files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Development Module",
+    "description": "Add unit tests for 6 untested files in the agents/development module.\n\n**Files to test:** 6 files\n\n**Test files to create:**\n- `agents/development/test___init__.py`\n- `agents/development/test_api_agent.py`\n- `agents/development/test_code_agent.py`\n- `agents/development/test_code_generation_agent.py`\n- `agents/development/test_devops_agent.py`\n- ... and 1 more\n\n**Example files to test:**\n- `agents/development/code_generation_agent.py`\n- `agents/development/github_agent.py`\n- `agents/development/__init__.py`\n- `agents/development/code_agent.py`\n- `agents/development/devops_agent.py`\n- ... and 1 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/development/code_generation_agent.py",
+      "agents/development/github_agent.py",
+      "agents/development/__init__.py",
+      "agents/development/code_agent.py",
+      "agents/development/devops_agent.py",
+      "agents/development/api_agent.py"
+    ],
+    "total_files": 6,
+    "test_files_to_create": [
+      "agents/development/test___init__.py",
+      "agents/development/test_api_agent.py",
+      "agents/development/test_code_agent.py",
+      "agents/development/test_code_generation_agent.py",
+      "agents/development/test_devops_agent.py",
+      "agents/development/test_github_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/development files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Web3 Module",
+    "description": "Add unit tests for 6 untested files in the agents/web3 module.\n\n**Files to test:** 6 files\n\n**Test files to create:**\n- `agents/web3/test___init__.py`\n- `agents/web3/test_auction_agent.py`\n- `agents/web3/test_blockchain_agent.py`\n- `agents/web3/test_crypto_agent.py`\n- `agents/web3/test_defi_agent.py`\n- ... and 1 more\n\n**Example files to test:**\n- `agents/web3/auction_agent.py`\n- `agents/web3/blockchain_agent.py`\n- `agents/web3/__init__.py`\n- `agents/web3/nft_agent.py`\n- `agents/web3/defi_agent.py`\n- ... and 1 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/web3/auction_agent.py",
+      "agents/web3/blockchain_agent.py",
+      "agents/web3/__init__.py",
+      "agents/web3/nft_agent.py",
+      "agents/web3/defi_agent.py",
+      "agents/web3/crypto_agent.py"
+    ],
+    "total_files": 6,
+    "test_files_to_create": [
+      "agents/web3/test___init__.py",
+      "agents/web3/test_auction_agent.py",
+      "agents/web3/test_blockchain_agent.py",
+      "agents/web3/test_crypto_agent.py",
+      "agents/web3/test_defi_agent.py",
+      "agents/web3/test_nft_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/web3 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Communication Module",
+    "description": "Add unit tests for 6 untested files in the agents/communication module.\n\n**Files to test:** 6 files\n\n**Test files to create:**\n- `agents/communication/test___init__.py`\n- `agents/communication/test_calendar_agent.py`\n- `agents/communication/test_contact_agent.py`\n- `agents/communication/test_email_agent.py`\n- `agents/communication/test_slack_agent.py`\n- ... and 1 more\n\n**Example files to test:**\n- `agents/communication/calendar_agent.py`\n- `agents/communication/slack_agent.py`\n- `agents/communication/email_agent.py`\n- `agents/communication/contact_agent.py`\n- `agents/communication/__init__.py`\n- ... and 1 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/communication/calendar_agent.py",
+      "agents/communication/slack_agent.py",
+      "agents/communication/email_agent.py",
+      "agents/communication/contact_agent.py",
+      "agents/communication/__init__.py",
+      "agents/communication/teams_agent.py"
+    ],
+    "total_files": 6,
+    "test_files_to_create": [
+      "agents/communication/test___init__.py",
+      "agents/communication/test_calendar_agent.py",
+      "agents/communication/test_contact_agent.py",
+      "agents/communication/test_email_agent.py",
+      "agents/communication/test_slack_agent.py",
+      "agents/communication/test_teams_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/communication files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Storage Module",
+    "description": "Add unit tests for 6 untested files in the storage module.\n\n**Files to test:** 6 files\n\n**Test files to create:**\n- `tests/test___init__.py`\n- `tests/test_encrypted_storage.py`\n- `tests/test_filecoin_client.py`\n- `tests/test_isolated_storage.py`\n- `tests/test_questdb_client.py`\n- ... and 1 more\n\n**Example files to test:**\n- `storage/filecoin_client.py`\n- `storage/__init__.py`\n- `storage/questdb_client.py`\n- `storage/isolated_storage.py`\n- `storage/unified_storage.py`\n- ... and 1 more\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "storage",
+      "quality"
+    ],
+    "files_affected": [
+      "storage/filecoin_client.py",
+      "storage/__init__.py",
+      "storage/questdb_client.py",
+      "storage/isolated_storage.py",
+      "storage/unified_storage.py",
+      "storage/encrypted_storage.py"
+    ],
+    "total_files": 6,
+    "test_files_to_create": [
+      "tests/test___init__.py",
+      "tests/test_encrypted_storage.py",
+      "tests/test_filecoin_client.py",
+      "tests/test_isolated_storage.py",
+      "tests/test_questdb_client.py",
+      "tests/test_unified_storage.py"
+    ],
+    "acceptance_criteria": [
+      "All storage files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer7 Module",
+    "description": "Add unit tests for 5 untested files in the agents/layer7 module.\n\n**Files to test:** 5 files\n\n**Test files to create:**\n- `agents/layer7/test___init__.py`\n- `agents/layer7/test_consensus_agent.py`\n- `agents/layer7/test_emergent_intelligence_agent.py`\n- `agents/layer7/test_swarm_agent.py`\n- `agents/layer7/test_swarm_coordinator_agent.py`\n\n**Example files to test:**\n- `agents/layer7/consensus_agent.py`\n- `agents/layer7/swarm_agent.py`\n- `agents/layer7/emergent_intelligence_agent.py`\n- `agents/layer7/__init__.py`\n- `agents/layer7/swarm_coordinator_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer7/consensus_agent.py",
+      "agents/layer7/swarm_agent.py",
+      "agents/layer7/emergent_intelligence_agent.py",
+      "agents/layer7/__init__.py",
+      "agents/layer7/swarm_coordinator_agent.py"
+    ],
+    "total_files": 5,
+    "test_files_to_create": [
+      "agents/layer7/test___init__.py",
+      "agents/layer7/test_consensus_agent.py",
+      "agents/layer7/test_emergent_intelligence_agent.py",
+      "agents/layer7/test_swarm_agent.py",
+      "agents/layer7/test_swarm_coordinator_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer7 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Web Module",
+    "description": "Add unit tests for 5 untested files in the agents/web module.\n\n**Files to test:** 5 files\n\n**Test files to create:**\n- `agents/web/test___init__.py`\n- `agents/web/test_integration_agent.py`\n- `agents/web/test_scraper_agent.py`\n- `agents/web/test_seo_agent.py`\n- `agents/web/test_web_agent.py`\n\n**Example files to test:**\n- `agents/web/seo_agent.py`\n- `agents/web/__init__.py`\n- `agents/web/scraper_agent.py`\n- `agents/web/web_agent.py`\n- `agents/web/integration_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/web/seo_agent.py",
+      "agents/web/__init__.py",
+      "agents/web/scraper_agent.py",
+      "agents/web/web_agent.py",
+      "agents/web/integration_agent.py"
+    ],
+    "total_files": 5,
+    "test_files_to_create": [
+      "agents/web/test___init__.py",
+      "agents/web/test_integration_agent.py",
+      "agents/web/test_scraper_agent.py",
+      "agents/web/test_seo_agent.py",
+      "agents/web/test_web_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/web files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Layer5 Module",
+    "description": "Add unit tests for 5 untested files in the agents/layer5 module.\n\n**Files to test:** 5 files\n\n**Test files to create:**\n- `agents/layer5/test___init__.py`\n- `agents/layer5/test_core_agent.py`\n- `agents/layer5/test_learning_agent.py`\n- `agents/layer5/test_meta_orchestrator_agent.py`\n- `agents/layer5/test_optimization_agent.py`\n\n**Example files to test:**\n- `agents/layer5/core_agent.py`\n- `agents/layer5/__init__.py`\n- `agents/layer5/meta/learning_agent.py`\n- `agents/layer5/meta/meta_orchestrator_agent.py`\n- `agents/layer5/meta/optimization_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/layer5/core_agent.py",
+      "agents/layer5/__init__.py",
+      "agents/layer5/meta/learning_agent.py",
+      "agents/layer5/meta/meta_orchestrator_agent.py",
+      "agents/layer5/meta/optimization_agent.py"
+    ],
+    "total_files": 5,
+    "test_files_to_create": [
+      "agents/layer5/test___init__.py",
+      "agents/layer5/test_core_agent.py",
+      "agents/layer5/test_learning_agent.py",
+      "agents/layer5/test_meta_orchestrator_agent.py",
+      "agents/layer5/test_optimization_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/layer5 files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Legal Module",
+    "description": "Add unit tests for 5 untested files in the agents/legal module.\n\n**Files to test:** 5 files\n\n**Test files to create:**\n- `agents/legal/test___init__.py`\n- `agents/legal/test_compliance_agent.py`\n- `agents/legal/test_contract_agent.py`\n- `agents/legal/test_ip_agent.py`\n- `agents/legal/test_legal_agent.py`\n\n**Example files to test:**\n- `agents/legal/legal_agent.py`\n- `agents/legal/__init__.py`\n- `agents/legal/ip_agent.py`\n- `agents/legal/contract_agent.py`\n- `agents/legal/compliance_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/legal/legal_agent.py",
+      "agents/legal/__init__.py",
+      "agents/legal/ip_agent.py",
+      "agents/legal/contract_agent.py",
+      "agents/legal/compliance_agent.py"
+    ],
+    "total_files": 5,
+    "test_files_to_create": [
+      "agents/legal/test___init__.py",
+      "agents/legal/test_compliance_agent.py",
+      "agents/legal/test_contract_agent.py",
+      "agents/legal/test_ip_agent.py",
+      "agents/legal/test_legal_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/legal files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Workflows Module",
+    "description": "Add unit tests for 4 untested files in the workflows module.\n\n**Files to test:** 4 files\n\n**Test files to create:**\n- `tests/test_contact_update.py`\n- `tests/test_entity_setup.py`\n- `tests/test_meeting_scheduling.py`\n- `tests/test_workflow_engine.py`\n\n**Example files to test:**\n- `workflows/workflow_engine.py`\n- `workflows/templates/meeting_scheduling.py`\n- `workflows/templates/contact_update.py`\n- `workflows/templates/entity_setup.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.0,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "workflows",
+      "quality"
+    ],
+    "files_affected": [
+      "workflows/workflow_engine.py",
+      "workflows/templates/meeting_scheduling.py",
+      "workflows/templates/contact_update.py",
+      "workflows/templates/entity_setup.py"
+    ],
+    "total_files": 4,
+    "test_files_to_create": [
+      "tests/test_contact_update.py",
+      "tests/test_entity_setup.py",
+      "tests/test_meeting_scheduling.py",
+      "tests/test_workflow_engine.py"
+    ],
+    "acceptance_criteria": [
+      "All workflows files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Knowledge Module",
+    "description": "Add unit tests for 4 untested files in the agents/knowledge module.\n\n**Files to test:** 4 files\n\n**Test files to create:**\n- `agents/knowledge/test___init__.py`\n- `agents/knowledge/test_knowledge_base_agent.py`\n- `agents/knowledge/test_knowledge_graph_agent.py`\n- `agents/knowledge/test_learning_agent.py`\n\n**Example files to test:**\n- `agents/knowledge/knowledge_graph_agent.py`\n- `agents/knowledge/learning_agent.py`\n- `agents/knowledge/__init__.py`\n- `agents/knowledge/knowledge_base_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/knowledge/knowledge_graph_agent.py",
+      "agents/knowledge/learning_agent.py",
+      "agents/knowledge/__init__.py",
+      "agents/knowledge/knowledge_base_agent.py"
+    ],
+    "total_files": 4,
+    "test_files_to_create": [
+      "agents/knowledge/test___init__.py",
+      "agents/knowledge/test_knowledge_base_agent.py",
+      "agents/knowledge/test_knowledge_graph_agent.py",
+      "agents/knowledge/test_learning_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/knowledge files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Modern Module",
+    "description": "Add unit tests for 4 untested files in the agents/modern module.\n\n**Files to test:** 4 files\n\n**Test files to create:**\n- `agents/modern/test___init__.py`\n- `agents/modern/test_meme_agent.py`\n- `agents/modern/test_slang_agent.py`\n- `agents/modern/test_social_agent.py`\n\n**Example files to test:**\n- `agents/modern/social_agent.py`\n- `agents/modern/__init__.py`\n- `agents/modern/slang_agent.py`\n- `agents/modern/meme_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/modern/social_agent.py",
+      "agents/modern/__init__.py",
+      "agents/modern/slang_agent.py",
+      "agents/modern/meme_agent.py"
+    ],
+    "total_files": 4,
+    "test_files_to_create": [
+      "agents/modern/test___init__.py",
+      "agents/modern/test_meme_agent.py",
+      "agents/modern/test_slang_agent.py",
+      "agents/modern/test_social_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/modern files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Insurance Module",
+    "description": "Add unit tests for 4 untested files in the agents/insurance module.\n\n**Files to test:** 4 files\n\n**Test files to create:**\n- `agents/insurance/test___init__.py`\n- `agents/insurance/test_claims_agent.py`\n- `agents/insurance/test_insurance_agent.py`\n- `agents/insurance/test_risk_agent.py`\n\n**Example files to test:**\n- `agents/insurance/__init__.py`\n- `agents/insurance/insurance_agent.py`\n- `agents/insurance/claims_agent.py`\n- `agents/insurance/risk_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.0,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/insurance/__init__.py",
+      "agents/insurance/insurance_agent.py",
+      "agents/insurance/claims_agent.py",
+      "agents/insurance/risk_agent.py"
+    ],
+    "total_files": 4,
+    "test_files_to_create": [
+      "agents/insurance/test___init__.py",
+      "agents/insurance/test_claims_agent.py",
+      "agents/insurance/test_insurance_agent.py",
+      "agents/insurance/test_risk_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/insurance files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agentic Module",
+    "description": "Add unit tests for 4 untested files in the agentic module.\n\n**Files to test:** 4 files\n\n**Test files to create:**\n- `tests/test_agent_discovery_methods.py`\n- `tests/test_main.py`\n- `tests/test_meta_orchestrator.py`\n- `tests/test_workflow_engine.py`\n\n**Example files to test:**\n- `agentic/workflows/workflow_engine.py`\n- `agentic/rag/main.py`\n- `agentic/orchestrator/agent_discovery_methods.py`\n- `agentic/orchestrator/meta_orchestrator.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 1.0,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "agentic",
+      "quality"
+    ],
+    "files_affected": [
+      "agentic/workflows/workflow_engine.py",
+      "agentic/rag/main.py",
+      "agentic/orchestrator/agent_discovery_methods.py",
+      "agentic/orchestrator/meta_orchestrator.py"
+    ],
+    "total_files": 4,
+    "test_files_to_create": [
+      "tests/test_agent_discovery_methods.py",
+      "tests/test_main.py",
+      "tests/test_meta_orchestrator.py",
+      "tests/test_workflow_engine.py"
+    ],
+    "acceptance_criteria": [
+      "All agentic files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Studio Src Pages Module",
+    "description": "Add unit tests for 3 untested files in the studio/src/pages module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `studio/src/pages/conductor/__tests__/Dashboard.test.tsx`\n- `studio/src/pages/governance/__tests__/DataGovernance.test.tsx`\n- `studio/src/pages/rendering/__tests__/RenderQueue.test.tsx`\n\n**Example files to test:**\n- `studio/src/pages/governance/DataGovernance.tsx`\n- `studio/src/pages/rendering/RenderQueue.tsx`\n- `studio/src/pages/conductor/Dashboard.tsx`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "studio",
+      "quality"
+    ],
+    "files_affected": [
+      "studio/src/pages/governance/DataGovernance.tsx",
+      "studio/src/pages/rendering/RenderQueue.tsx",
+      "studio/src/pages/conductor/Dashboard.tsx"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "studio/src/pages/conductor/__tests__/Dashboard.test.tsx",
+      "studio/src/pages/governance/__tests__/DataGovernance.test.tsx",
+      "studio/src/pages/rendering/__tests__/RenderQueue.test.tsx"
+    ],
+    "acceptance_criteria": [
+      "All studio/src/pages files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Health Module",
+    "description": "Add unit tests for 3 untested files in the agents/health module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `agents/health/test___init__.py`\n- `agents/health/test_health_agent.py`\n- `agents/health/test_nutrition_agent.py`\n\n**Example files to test:**\n- `agents/health/health_agent.py`\n- `agents/health/nutrition_agent.py`\n- `agents/health/__init__.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/health/health_agent.py",
+      "agents/health/nutrition_agent.py",
+      "agents/health/__init__.py"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "agents/health/test___init__.py",
+      "agents/health/test_health_agent.py",
+      "agents/health/test_nutrition_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/health files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Workflow Module",
+    "description": "Add unit tests for 3 untested files in the agents/workflow module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `agents/workflow/test___init__.py`\n- `agents/workflow/test_meeting_orchestrator_agent.py`\n- `agents/workflow/test_workflow_pattern_agent.py`\n\n**Example files to test:**\n- `agents/workflow/__init__.py`\n- `agents/workflow/meeting_orchestrator_agent.py`\n- `agents/workflow/workflow_pattern_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/workflow/__init__.py",
+      "agents/workflow/meeting_orchestrator_agent.py",
+      "agents/workflow/workflow_pattern_agent.py"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "agents/workflow/test___init__.py",
+      "agents/workflow/test_meeting_orchestrator_agent.py",
+      "agents/workflow/test_workflow_pattern_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/workflow files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Integrations Module",
+    "description": "Add unit tests for 3 untested files in the integrations module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `tests/test_bidirectional_sync.py`\n- `tests/test_pm_integration.py`\n- `tests/test_project_importer.py`\n\n**Example files to test:**\n- `integrations/project_importer.py`\n- `integrations/pm_integration.py`\n- `integrations/bidirectional_sync.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "integrations",
+      "quality"
+    ],
+    "files_affected": [
+      "integrations/project_importer.py",
+      "integrations/pm_integration.py",
+      "integrations/bidirectional_sync.py"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "tests/test_bidirectional_sync.py",
+      "tests/test_pm_integration.py",
+      "tests/test_project_importer.py"
+    ],
+    "acceptance_criteria": [
+      "All integrations files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Scripts Module",
+    "description": "Add unit tests for 3 untested files in the scripts module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `tests/test_analyze_deployments.py`\n- `tests/test_generate_deployment_configs.py`\n- `tests/test_update_agent_metadata.py`\n\n**Example files to test:**\n- `scripts/analyze_deployments.py`\n- `scripts/update_agent_metadata.py`\n- `scripts/generate_deployment_configs.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "scripts",
+      "quality"
+    ],
+    "files_affected": [
+      "scripts/analyze_deployments.py",
+      "scripts/update_agent_metadata.py",
+      "scripts/generate_deployment_configs.py"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "tests/test_analyze_deployments.py",
+      "tests/test_generate_deployment_configs.py",
+      "tests/test_update_agent_metadata.py"
+    ],
+    "acceptance_criteria": [
+      "All scripts files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Workers Module",
+    "description": "Add unit tests for 3 untested files in the workers module.\n\n**Files to test:** 3 files\n\n**Test files to create:**\n- `tests/test_embedding_worker.py`\n- `tests/test_rendering_worker.py`\n- `tests/test_training_worker.py`\n\n**Example files to test:**\n- `workers/embedding_worker.py`\n- `workers/training_worker.py`\n- `workers/rendering_worker.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.8,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "workers",
+      "quality"
+    ],
+    "files_affected": [
+      "workers/embedding_worker.py",
+      "workers/training_worker.py",
+      "workers/rendering_worker.py"
+    ],
+    "total_files": 3,
+    "test_files_to_create": [
+      "tests/test_embedding_worker.py",
+      "tests/test_rendering_worker.py",
+      "tests/test_training_worker.py"
+    ],
+    "acceptance_criteria": [
+      "All workers files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Root Module",
+    "description": "Add unit tests for 2 untested files in the root module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `tests/test_sync_agents.py`\n- `tests/test_validate_connectors.py`\n\n**Example files to test:**\n- `validate_connectors.py`\n- `sync_agents.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "root",
+      "quality"
+    ],
+    "files_affected": [
+      "validate_connectors.py",
+      "sync_agents.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "tests/test_sync_agents.py",
+      "tests/test_validate_connectors.py"
+    ],
+    "acceptance_criteria": [
+      "All root files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Knowledge_Graph Module",
+    "description": "Add unit tests for 2 untested files in the knowledge_graph module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `tests/test___init__.py`\n- `tests/test_neo4j_client.py`\n\n**Example files to test:**\n- `knowledge_graph/__init__.py`\n- `knowledge_graph/neo4j_client.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "knowledge_graph",
+      "quality"
+    ],
+    "files_affected": [
+      "knowledge_graph/__init__.py",
+      "knowledge_graph/neo4j_client.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "tests/test___init__.py",
+      "tests/test_neo4j_client.py"
+    ],
+    "acceptance_criteria": [
+      "All knowledge_graph files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Config Module",
+    "description": "Add unit tests for 2 untested files in the config module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `tests/test_model_config.py`\n- `tests/test_provider_config.py`\n\n**Example files to test:**\n- `config/model_config.py`\n- `config/provider_config.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "config",
+      "quality"
+    ],
+    "files_affected": [
+      "config/model_config.py",
+      "config/provider_config.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "tests/test_model_config.py",
+      "tests/test_provider_config.py"
+    ],
+    "acceptance_criteria": [
+      "All config files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Security Module",
+    "description": "Add unit tests for 2 untested files in the security module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `tests/test_encryption.py`\n- `tests/test_vault_integration.py`\n\n**Example files to test:**\n- `security/encryption.py`\n- `security/vault_integration.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "security",
+      "quality"
+    ],
+    "files_affected": [
+      "security/encryption.py",
+      "security/vault_integration.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "tests/test_encryption.py",
+      "tests/test_vault_integration.py"
+    ],
+    "acceptance_criteria": [
+      "All security files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Research Module",
+    "description": "Add unit tests for 2 untested files in the agents/research module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `agents/research/test___init__.py`\n- `agents/research/test_research_agent.py`\n\n**Example files to test:**\n- `agents/research/__init__.py`\n- `agents/research/research_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/research/__init__.py",
+      "agents/research/research_agent.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "agents/research/test___init__.py",
+      "agents/research/test_research_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/research files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Pm Module",
+    "description": "Add unit tests for 2 untested files in the agents/pm module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `agents/pm/test_project_plan_generator.py`\n- `agents/pm/test_ticket_refinement_agent.py`\n\n**Example files to test:**\n- `agents/pm/project_plan_generator.py`\n- `agents/pm/ticket_refinement_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/pm/project_plan_generator.py",
+      "agents/pm/ticket_refinement_agent.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "agents/pm/test_project_plan_generator.py",
+      "agents/pm/test_ticket_refinement_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/pm files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Core Module",
+    "description": "Add unit tests for 2 untested files in the agents/core module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `agents/core/test___init__.py`\n- `agents/core/test_core_agent.py`\n\n**Example files to test:**\n- `agents/core/core_agent.py`\n- `agents/core/__init__.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "critical",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/core/core_agent.py",
+      "agents/core/__init__.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "agents/core/test___init__.py",
+      "agents/core/test_core_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/core files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Orchestrator Module",
+    "description": "Add unit tests for 2 untested files in the orchestrator module.\n\n**Files to test:** 2 files\n\n**Test files to create:**\n- `tests/test_meta_orchestrator.py`\n- `tests/test_workflow_templates.py`\n\n**Example files to test:**\n- `orchestrator/meta_orchestrator.py`\n- `orchestrator/workflow_templates.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.5,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "orchestrator",
+      "quality"
+    ],
+    "files_affected": [
+      "orchestrator/meta_orchestrator.py",
+      "orchestrator/workflow_templates.py"
+    ],
+    "total_files": 2,
+    "test_files_to_create": [
+      "tests/test_meta_orchestrator.py",
+      "tests/test_workflow_templates.py"
+    ],
+    "acceptance_criteria": [
+      "All orchestrator files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Self_Update Module",
+    "description": "Add unit tests for 1 untested files in the self_update module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_hot_reload.py`\n\n**Example files to test:**\n- `self_update/hot_reload.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "self_update",
+      "quality"
+    ],
+    "files_affected": [
+      "self_update/hot_reload.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_hot_reload.py"
+    ],
+    "acceptance_criteria": [
+      "All self_update files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Studio Src App.Tsx Module",
+    "description": "Add unit tests for 1 untested files in the studio/src/App.tsx module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `studio/src/__tests__/App.test.tsx`\n\n**Example files to test:**\n- `studio/src/App.tsx`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "studio",
+      "quality"
+    ],
+    "files_affected": [
+      "studio/src/App.tsx"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "studio/src/__tests__/App.test.tsx"
+    ],
+    "acceptance_criteria": [
+      "All studio/src/App.tsx files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Llm Module",
+    "description": "Add unit tests for 1 untested files in the llm module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_llm_client.py`\n\n**Example files to test:**\n- `llm/llm_client.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "llm",
+      "quality"
+    ],
+    "files_affected": [
+      "llm/llm_client.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_llm_client.py"
+    ],
+    "acceptance_criteria": [
+      "All llm files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Privacy Module",
+    "description": "Add unit tests for 1 untested files in the privacy module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_gdpr_compliance.py`\n\n**Example files to test:**\n- `privacy/gdpr_compliance.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "privacy",
+      "quality"
+    ],
+    "files_affected": [
+      "privacy/gdpr_compliance.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_gdpr_compliance.py"
+    ],
+    "acceptance_criteria": [
+      "All privacy files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Frontend Module",
+    "description": "Add unit tests for 1 untested files in the frontend module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `frontend/__tests__/WorkflowBuilder.test.tsx`\n\n**Example files to test:**\n- `frontend/WorkflowBuilder.tsx`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "frontend",
+      "quality"
+    ],
+    "files_affected": [
+      "frontend/WorkflowBuilder.tsx"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "frontend/__tests__/WorkflowBuilder.test.tsx"
+    ],
+    "acceptance_criteria": [
+      "All frontend files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Frontend Components Workflowtemplates.Tsx Module",
+    "description": "Add unit tests for 1 untested files in the frontend/components/WorkflowTemplates.tsx module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `frontend/components/__tests__/WorkflowTemplates.test.tsx`\n\n**Example files to test:**\n- `frontend/components/WorkflowTemplates.tsx`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "frontend",
+      "quality"
+    ],
+    "files_affected": [
+      "frontend/components/WorkflowTemplates.tsx"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "frontend/components/__tests__/WorkflowTemplates.test.tsx"
+    ],
+    "acceptance_criteria": [
+      "All frontend/components/WorkflowTemplates.tsx files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Frontend Components Nodeconfigpanel.Tsx Module",
+    "description": "Add unit tests for 1 untested files in the frontend/components/NodeConfigPanel.tsx module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `frontend/components/__tests__/NodeConfigPanel.test.tsx`\n\n**Example files to test:**\n- `frontend/components/NodeConfigPanel.tsx`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "frontend",
+      "quality"
+    ],
+    "files_affected": [
+      "frontend/components/NodeConfigPanel.tsx"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "frontend/components/__tests__/NodeConfigPanel.test.tsx"
+    ],
+    "acceptance_criteria": [
+      "All frontend/components/NodeConfigPanel.tsx files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Training Module",
+    "description": "Add unit tests for 1 untested files in the training module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_theta_trainer.py`\n\n**Example files to test:**\n- `training/theta_trainer.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "training",
+      "quality"
+    ],
+    "files_affected": [
+      "training/theta_trainer.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_theta_trainer.py"
+    ],
+    "acceptance_criteria": [
+      "All training files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Discovery.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/discovery.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/discovery.py/test_discovery.py`\n\n**Example files to test:**\n- `agents/discovery.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/discovery.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/discovery.py/test_discovery.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/discovery.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Registry.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/registry.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/registry.py/test_registry.py`\n\n**Example files to test:**\n- `agents/registry.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/registry.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/registry.py/test_registry.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/registry.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Base_Agent.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/base_agent.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/base_agent.py/test_base_agent.py`\n\n**Example files to test:**\n- `agents/base_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/base_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/base_agent.py/test_base_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/base_agent.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Universal_Vault_Agent.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/universal_vault_agent.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/universal_vault_agent.py/test_universal_vault_agent.py`\n\n**Example files to test:**\n- `agents/universal_vault_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/universal_vault_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/universal_vault_agent.py/test_universal_vault_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/universal_vault_agent.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents __Init__.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/__init__.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/__init__.py/test___init__.py`\n\n**Example files to test:**\n- `agents/__init__.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/__init__.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/__init__.py/test___init__.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/__init__.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Factory.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/factory.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/factory.py/test_factory.py`\n\n**Example files to test:**\n- `agents/factory.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/factory.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/factory.py/test_factory.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/factory.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Base.Py Module",
+    "description": "Add unit tests for 1 untested files in the agents/base.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/base.py/test_base.py`\n\n**Example files to test:**\n- `agents/base.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/base.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/base.py/test_base.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/base.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Analysis Module",
+    "description": "Add unit tests for 1 untested files in the agents/analysis module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/analysis/test_folder_analyzer.py`\n\n**Example files to test:**\n- `agents/analysis/folder_analyzer.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/analysis/folder_analyzer.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/analysis/test_folder_analyzer.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/analysis files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Security Module",
+    "description": "Add unit tests for 1 untested files in the agents/security module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/security/test_security_compliance_agent.py`\n\n**Example files to test:**\n- `agents/security/security_compliance_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/security/security_compliance_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/security/test_security_compliance_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/security files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Voice Module",
+    "description": "Add unit tests for 1 untested files in the agents/voice module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/voice/test_voice_command_agent.py`\n\n**Example files to test:**\n- `agents/voice/voice_command_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/voice/voice_command_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/voice/test_voice_command_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/voice files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Governance Module",
+    "description": "Add unit tests for 1 untested files in the agents/governance module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/governance/test_entity_governance_agent.py`\n\n**Example files to test:**\n- `agents/governance/entity_governance_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/governance/entity_governance_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/governance/test_entity_governance_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/governance files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Investor Module",
+    "description": "Add unit tests for 1 untested files in the agents/investor module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/investor/test_investor_relations_agent.py`\n\n**Example files to test:**\n- `agents/investor/investor_relations_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/investor/investor_relations_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/investor/test_investor_relations_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/investor files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Data Module",
+    "description": "Add unit tests for 1 untested files in the agents/data module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/data/test_data_pipeline_agent.py`\n\n**Example files to test:**\n- `agents/data/data_pipeline_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/data/data_pipeline_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/data/test_data_pipeline_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/data files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Agents Trading Module",
+    "description": "Add unit tests for 1 untested files in the agents/trading module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `agents/trading/test_trading_strategy_agent.py`\n\n**Example files to test:**\n- `agents/trading/trading_strategy_agent.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "high",
+    "labels": [
+      "testing",
+      "agents",
+      "quality"
+    ],
+    "files_affected": [
+      "agents/trading/trading_strategy_agent.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "agents/trading/test_trading_strategy_agent.py"
+    ],
+    "acceptance_criteria": [
+      "All agents/trading files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Backend Module",
+    "description": "Add unit tests for 1 untested files in the backend module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_main.py`\n\n**Example files to test:**\n- `backend/main.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "backend",
+      "quality"
+    ],
+    "files_affected": [
+      "backend/main.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_main.py"
+    ],
+    "acceptance_criteria": [
+      "All backend files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Cli Module",
+    "description": "Add unit tests for 1 untested files in the cli module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_akashic_cli.py`\n\n**Example files to test:**\n- `cli/akashic_cli.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "cli",
+      "quality"
+    ],
+    "files_affected": [
+      "cli/akashic_cli.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_akashic_cli.py"
+    ],
+    "acceptance_criteria": [
+      "All cli files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Cicd Module",
+    "description": "Add unit tests for 1 untested files in the cicd module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_pipeline.py`\n\n**Example files to test:**\n- `cicd/pipeline.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "cicd",
+      "quality"
+    ],
+    "files_affected": [
+      "cicd/pipeline.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_pipeline.py"
+    ],
+    "acceptance_criteria": [
+      "All cicd files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Testing Module",
+    "description": "Add unit tests for 1 untested files in the testing module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_automated_qa.py`\n\n**Example files to test:**\n- `testing/automated_qa.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "testing",
+      "quality"
+    ],
+    "files_affected": [
+      "testing/automated_qa.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_automated_qa.py"
+    ],
+    "acceptance_criteria": [
+      "All testing files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Charms Apollo-Ai-K8S Src Charm.Py Module",
+    "description": "Add unit tests for 1 untested files in the charms/apollo-ai-k8s/src/charm.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_charm.py`\n\n**Example files to test:**\n- `charms/apollo-ai-k8s/src/charm.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "charms",
+      "quality"
+    ],
+    "files_affected": [
+      "charms/apollo-ai-k8s/src/charm.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_charm.py"
+    ],
+    "acceptance_criteria": [
+      "All charms/apollo-ai-k8s/src/charm.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Wallet Module",
+    "description": "Add unit tests for 1 untested files in the wallet module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_wallet_service.py`\n\n**Example files to test:**\n- `wallet/wallet_service.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "wallet",
+      "quality"
+    ],
+    "files_affected": [
+      "wallet/wallet_service.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_wallet_service.py"
+    ],
+    "acceptance_criteria": [
+      "All wallet files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Conductor Src Conductor.Py Module",
+    "description": "Add unit tests for 1 untested files in the conductor/src/conductor.py module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_conductor.py`\n\n**Example files to test:**\n- `conductor/src/conductor.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "conductor",
+      "quality"
+    ],
+    "files_affected": [
+      "conductor/src/conductor.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_conductor.py"
+    ],
+    "acceptance_criteria": [
+      "All conductor/src/conductor.py files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Conductor Src Selector Module",
+    "description": "Add unit tests for 1 untested files in the conductor/src/selector module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_model_selector.py`\n\n**Example files to test:**\n- `conductor/src/selector/model_selector.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "conductor",
+      "quality"
+    ],
+    "files_affected": [
+      "conductor/src/selector/model_selector.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_model_selector.py"
+    ],
+    "acceptance_criteria": [
+      "All conductor/src/selector files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Conductor Src Optimizer Module",
+    "description": "Add unit tests for 1 untested files in the conductor/src/optimizer module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_cost_optimizer.py`\n\n**Example files to test:**\n- `conductor/src/optimizer/cost_optimizer.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "conductor",
+      "quality"
+    ],
+    "files_affected": [
+      "conductor/src/optimizer/cost_optimizer.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_cost_optimizer.py"
+    ],
+    "acceptance_criteria": [
+      "All conductor/src/optimizer files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Conductor Src Scheduler Module",
+    "description": "Add unit tests for 1 untested files in the conductor/src/scheduler module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_gpu_scheduler.py`\n\n**Example files to test:**\n- `conductor/src/scheduler/gpu_scheduler.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "conductor",
+      "quality"
+    ],
+    "files_affected": [
+      "conductor/src/scheduler/gpu_scheduler.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_gpu_scheduler.py"
+    ],
+    "acceptance_criteria": [
+      "All conductor/src/scheduler files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Conductor Src Router Module",
+    "description": "Add unit tests for 1 untested files in the conductor/src/router module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n- `tests/test_job_router.py`\n\n**Example files to test:**\n- `conductor/src/router/job_router.py`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "conductor",
+      "quality"
+    ],
+    "files_affected": [
+      "conductor/src/router/job_router.py"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [
+      "tests/test_job_router.py"
+    ],
+    "acceptance_criteria": [
+      "All conductor/src/router files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Src Router.Rs Module",
+    "description": "Add unit tests for 1 untested files in the src/router.rs module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n\n**Example files to test:**\n- `src/router.rs`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "src",
+      "quality"
+    ],
+    "files_affected": [
+      "src/router.rs"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [],
+    "acceptance_criteria": [
+      "All src/router.rs files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Src Main.Rs Module",
+    "description": "Add unit tests for 1 untested files in the src/main.rs module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n\n**Example files to test:**\n- `src/main.rs`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "src",
+      "quality"
+    ],
+    "files_affected": [
+      "src/main.rs"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [],
+    "acceptance_criteria": [
+      "All src/main.rs files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Src Orchestrator.Rs Module",
+    "description": "Add unit tests for 1 untested files in the src/orchestrator.rs module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n\n**Example files to test:**\n- `src/orchestrator.rs`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "medium",
+    "labels": [
+      "testing",
+      "src",
+      "quality"
+    ],
+    "files_affected": [
+      "src/orchestrator.rs"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [],
+    "acceptance_criteria": [
+      "All src/orchestrator.rs files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested"
+    ]
+  },
+  {
+    "title": "Add Tests for Src Api.Rs Module",
+    "description": "Add unit tests for 1 untested files in the src/api.rs module.\n\n**Files to test:** 1 files\n\n**Test files to create:**\n\n**Example files to test:**\n- `src/api.rs`\n\n**Test template:**\n```python\nimport pytest\nfrom module import function_to_test\n\ndef test_function_basic():\n    \"\"\"Test basic functionality\"\"\"\n    result = function_to_test('input')\n    assert result == 'expected'\n\ndef test_function_edge_cases():\n    \"\"\"Test edge cases\"\"\"\n    with pytest.raises(ValueError):\n        function_to_test(None)\n```",
+    "estimated_hours": 0.2,
+    "priority": "critical",
+    "labels": [
+      "testing",
+      "src",
+      "quality"
+    ],
+    "files_affected": [
+      "src/api.rs"
+    ],
+    "total_files": 1,
+    "test_files_to_create": [],
+    "acceptance_criteria": [
+      "All src/api.rs files have corresponding test files",
+      "Test coverage > 80% for the module",
+      "All public functions have unit tests",
+      "Edge cases and error handling tested",
+      "API endpoints have integration tests",
+      "Request/response validation tested"
+    ]
+  }
+]
