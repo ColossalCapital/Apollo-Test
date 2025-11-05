@@ -1,0 +1,251 @@
+# Apollo AI Model Configuration
+# All models stored on Filecoin for decentralized, user-owned AI
+
+models:
+  # Code Generation & Development
+  code_assistant:
+    model: deepseek-ai/deepseek-coder-6.7b-instruct
+    quantization: q4_K_M
+    memory: 2GB
+    file_size: 3.8GB
+    tasks: 
+      - code_generation
+      - debugging
+      - refactoring
+      - code_review
+    agents:
+      - GitHubAgent
+      - CodeReviewAgent
+      - APIAgent
+    filecoin:
+      base_cid: "bafybeideepseek67b"  # Placeholder - will be actual CID
+      
+  # Email Processing
+  email_agent:
+    model: mistralai/Mistral-7B-Instruct-v0.3
+    quantization: q4_K_M
+    memory: 2.5GB
+    file_size: 4.1GB
+    tasks:
+      - email_classification
+      - summarization
+      - action_extraction
+      - priority_scoring
+    fine_tune_on:
+      - user_email_patterns
+      - response_templates
+      - scheduling_preferences
+    agents:
+      - EmailAgent
+      - ContactAgent
+      - SlackAgent
+    filecoin:
+      base_cid: "bafybeimistral7b"
+      
+  # Document Understanding (PDFs, contracts, reports)
+  document_parser:
+    model: microsoft/Phi-3-medium-4k-instruct
+    quantization: q4_K_M
+    memory: 2GB
+    file_size: 2.4GB
+    tasks:
+      - pdf_extraction
+      - table_parsing
+      - contract_analysis
+      - compliance_checking
+    agents:
+      - DocumentAgent
+      - LegalAgent
+      - ContractAgent
+      - ComplianceAgent
+      - TaxAgent
+      - InvoiceAgent
+    filecoin:
+      base_cid: "bafybeiphi3medium"
+      
+  # Knowledge Base & Semantic Search
+  knowledge_agent:
+    model: BAAI/bge-large-en-v1.5
+    type: embedding
+    memory: 500MB
+    file_size: 1.3GB
+    tasks:
+      - semantic_search
+      - document_clustering
+      - knowledge_graph_building
+    vector_db: qdrant
+    agents:
+      - KnowledgeAgent
+      - ResearchAgent
+      - WikiAgent
+    filecoin:
+      base_cid: "bafybeibgelarge"
+      
+  # Calendar & Scheduling
+  calendar_agent:
+    model: microsoft/Phi-3-mini-4k-instruct
+    quantization: q4_K_M
+    memory: 1GB
+    file_size: 2.3GB
+    tasks:
+      - meeting_extraction
+      - conflict_detection
+      - time_optimization
+      - availability_parsing
+    agents:
+      - CalendarAgent
+      - ProjectAgent
+    filecoin:
+      base_cid: "bafybeiphi3mini"
+      
+  # Audio & Speech
+  audio_agent:
+    model: openai/whisper-medium
+    memory: 1.5GB
+    file_size: 1.5GB
+    tasks:
+      - transcription
+      - meeting_notes
+      - voice_commands
+    agents:
+      - AudioAgent
+    filecoin:
+      base_cid: "bafybeiwhispermed"
+      
+  # Web Content & Scraping
+  web_scraper:
+    model: mistralai/Mistral-7B-Instruct-v0.3
+    quantization: q4_K_M
+    memory: 2.5GB
+    file_size: 4.1GB
+    tasks:
+      - content_extraction
+      - summarization
+      - metadata_parsing
+      - link_analysis
+    agents:
+      - ScraperAgent
+      - GrantAgent
+      - ResearchAgent
+    filecoin:
+      base_cid: "bafybeimistral7b"  # Same as email_agent
+      
+  # Text Analysis & NLP
+  text_analyzer:
+    model: sentence-transformers/all-MiniLM-L6-v2
+    type: embedding
+    memory: 200MB
+    file_size: 90MB
+    tasks:
+      - sentiment_analysis
+      - entity_extraction
+      - topic_modeling
+      - text_classification
+    agents:
+      - TextAgent
+      - SentimentAgent
+      - RouterAgent
+    filecoin:
+      base_cid: "bafybeiminilm"
+      
+  # Multi-modal (Images in documents)
+  vision_agent:
+    model: microsoft/Florence-2-base
+    memory: 1.5GB
+    file_size: 1.8GB
+    tasks:
+      - ocr
+      - chart_extraction
+      - diagram_understanding
+      - screenshot_analysis
+    agents:
+      - VisionAgent
+      - DataAgent
+    filecoin:
+      base_cid: "bafybeiflorence2"
+
+# Model Loading Strategy
+loading:
+  # Load on startup
+  preload:
+    - knowledge_agent  # Embedding model (small, always needed)
+    - text_analyzer    # Embedding model (small, always needed)
+    
+  # Load on first use
+  lazy_load:
+    - email_agent
+    - document_parser
+    - calendar_agent
+    - code_assistant
+    - web_scraper
+    - audio_agent
+    - vision_agent
+    
+  # Cache settings
+  cache:
+    max_models: 3  # Keep max 3 models in memory
+    eviction: LRU  # Least Recently Used
+    
+# Filecoin Storage Settings
+filecoin:
+  # Web3.Storage API endpoint
+  api_endpoint: "https://api.web3.storage"
+  
+  # Local cache directory
+  cache_dir: "./cache/models"
+  
+  # Model registry (metadata)
+  registry_db: "postgresql://localhost/apollo_models"
+  
+  # Auto-download missing models
+  auto_download: true
+  
+  # Verify checksums
+  verify_integrity: true
+
+# Training Configuration
+training:
+  # Theta GPU integration
+  theta:
+    enabled: true
+    api_endpoint: "https://api.thetatoken.org/v1"
+    
+  # Training data storage
+  storage:
+    training_data: "filecoin://training_data/"
+    fine_tuned_models: "filecoin://fine_tuned/"
+    
+  # Per-user fine-tuning
+  user_models:
+    enabled: true
+    max_per_user: 5
+    
+  # Training schedule
+  schedule:
+    email_agent: "weekly"      # Re-train weekly on new patterns
+    calendar_agent: "monthly"  # Re-train monthly
+    code_assistant: "on_demand" # Only when user requests
+
+# Resource Limits
+resources:
+  # Total memory limit
+  max_memory: 8GB
+  
+  # Per-model limits
+  model_timeout: 30s  # Max inference time
+  
+  # Concurrent requests
+  max_concurrent: 10
+  
+# Monitoring
+monitoring:
+  # Track model performance
+  metrics:
+    - inference_time
+    - memory_usage
+    - cache_hit_rate
+    - user_satisfaction
+    
+  # Log to
+  log_level: INFO
+  log_file: "./logs/apollo_models.log"
