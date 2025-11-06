@@ -111,3 +111,4 @@ class LLMClient:
         
         if model == "phi-3-medium":
             # Phi-3 format: <|system|>\n{system}<|end|>\n
+            pass  # TODO: Implement Phi-3 formatting

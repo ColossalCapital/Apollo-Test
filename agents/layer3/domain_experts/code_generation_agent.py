@@ -108,7 +108,7 @@ Return as JSON:
     }},
     "documentation": {{
         "api_docs": "# User Service API\\n\\n## create_user\\n\\nCreates a new user in the system.\\n\\n**Parameters:**\\n- user_data (dict): User information including email and name\\n\\n**Returns:**\\n- User: Created user object\\n\\n**Raises:**\\n- ValueError: If email is missing or user already exists",
-        "usage_examples": "# Create a user\\nservice = UserService(db)\\nuser = await service.create_user({\\n    'email': 'user@example.com',\\n    'name': 'John Doe'\\n})"
+        "usage_examples": "# Create a user\\nservice = UserService(db)\\nuser = await service.create_user({{\\n    'email': 'user@example.com',\\n    'name': 'John Doe'\\n}})"
     }},
     "type_definitions": {{
         "files": [
