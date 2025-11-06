@@ -1,0 +1,5 @@
+.env
+
+# Akashic analysis outputs (should be in .akashic/ only)
+/analysis/
+analysis/
