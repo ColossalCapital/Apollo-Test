@@ -1,0 +1,41 @@
+options:
+  replicas:
+    type: int
+    description: Number of Apollo service replicas
+    default: 2
+  
+  port:
+    type: int
+    description: API port
+    default: 8082
+  
+  enable-ollama:
+    type: boolean
+    description: Enable Ollama for local LLM inference
+    default: true
+  
+  enable-openai:
+    type: boolean
+    description: Enable OpenAI API
+    default: false
+  
+  openai-api-key:
+    type: string
+    description: OpenAI API key (use juju secrets)
+    default: ""
+  
+  default-model:
+    type: string
+    description: Default LLM model
+    default: "mistral"
+  
+  enable-learning:
+    type: boolean
+    description: Enable personal and collective learning
+    default: true
+  
+  enable-cross-service:
+    type: boolean
+    description: Enable cross-service context access
+    default: true
+
