@@ -1,0 +1,446 @@
+"""
+Apollo AI Service - Standalone Microservice
+The Intelligent Companion Across the Colossal Capital Ecosystem
+"""
+
+# Import the Apollo API
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from api.main import app
+
+# Re-export app
+__all__ = ['app'], HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List, Optional, Dict, Any
+import uvicorn
+from datetime import datetime
+import uuid
+
+app = FastAPI(
+    title="Apollo AI",
+    description="Your Intelligent Companion Across the Colossal Capital Ecosystem",
+    version="1.0.0"
+)
+
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Configure appropriately for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ============================================================================
+# Models
+# ============================================================================
+
+class ChatMessage(BaseModel):
+    role: str  # 'user' or 'assistant'
+    content: str
+    timestamp: Optional[str] = None
+
+class ChatRequest(BaseModel):
+    message: str
+    context: Optional[Dict[str, Any]] = None
+    service: str  # 'delt', 'atlas', 'akashic'
+    user_id: str
+
+class ChatResponse(BaseModel):
+    response: str
+    actions: Optional[List[Dict[str, Any]]] = None
+    suggestions: Optional[List[str]] = None
+    conversation_id: str
+
+class AnalyzeRequest(BaseModel):
+    data_type: str  # 'portfolio', 'code', 'document', etc.
+    data: Dict[str, Any]
+    user_id: str
+
+class AnalyzeResponse(BaseModel):
+    analysis: str
+    insights: List[Dict[str, Any]]
+    recommendations: List[Dict[str, Any]]
+
+class PermissionRequest(BaseModel):
+    user_id: str
+    from_service: str
+    to_service: str
+    scopes: List[str]
+
+class Permission(BaseModel):
+    user_id: str
+    from_service: str
+    to_service: str
+    scopes: List[str]
+    granted: bool
+    granted_at: Optional[str] = None
+
+# ============================================================================
+# In-Memory Storage (Replace with PostgreSQL in production)
+# ============================================================================
+
+conversations: Dict[str, List[ChatMessage]] = {}
+permissions: Dict[str, List[Permission]] = {}
+user_contexts: Dict[str, Dict[str, Any]] = {}
+
+# ============================================================================
+# Endpoints
+# ============================================================================
+
+@app.get("/")
+async def root():
+    """Health check and API info"""
+    return {
+        "service": "Apollo AI",
+        "status": "running",
+        "version": "1.0.0",
+        "tagline": "Your Intelligent Companion",
+        "icon": "☀️"
+    }
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
+    return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
+
+# ============================================================================
+# Chat & Assistance
+# ============================================================================
+
+@app.post("/api/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
+    """
+    Main chat endpoint - context-aware assistance
+    """
+    print(f"☀️ Apollo chat from {request.service}: {request.message[:50]}...")
+    
+    # Get or create conversation
+    conv_id = f"{request.user_id}_{request.service}"
+    if conv_id not in conversations:
+        conversations[conv_id] = []
+    
+    # Add user message
+    conversations[conv_id].append(ChatMessage(
+        role="user",
+        content=request.message,
+        timestamp=datetime.utcnow().isoformat()
+    ))
+    
+    # Generate response based on service and context
+    response_text = await generate_response(
+        message=request.message,
+        context=request.context,
+        service=request.service,
+        user_id=request.user_id
+    )
+    
+    # Add assistant message
+    conversations[conv_id].append(ChatMessage(
+        role="assistant",
+        content=response_text,
+        timestamp=datetime.utcnow().isoformat()
+    ))
+    
+    # Generate action buttons
+    actions = generate_actions(request.message, request.service)
+    
+    # Generate suggestions
+    suggestions = generate_suggestions(request.message, request.service)
+    
+    return ChatResponse(
+        response=response_text,
+        actions=actions,
+        suggestions=suggestions,
+        conversation_id=conv_id
+    )
+
+@app.get("/api/conversations/{user_id}")
+async def get_conversations(user_id: str, service: Optional[str] = None):
+    """
+    Get conversation history for a user
+    """
+    if service:
+        conv_id = f"{user_id}_{service}"
+        return {
+            "conversation_id": conv_id,
+            "messages": conversations.get(conv_id, [])
+        }
+    else:
+        # Return all conversations for user
+        user_convs = {
+            k: v for k, v in conversations.items() 
+            if k.startswith(f"{user_id}_")
+        }
+        return {"conversations": user_convs}
+
+@app.delete("/api/conversations/{conversation_id}")
+async def delete_conversation(conversation_id: str):
+    """Delete a conversation"""
+    if conversation_id in conversations:
+        del conversations[conversation_id]
+        return {"status": "deleted"}
+    raise HTTPException(status_code=404, detail="Conversation not found")
+
+# ============================================================================
+# Analysis & Insights
+# ============================================================================
+
+@app.post("/api/analyze", response_model=AnalyzeResponse)
+async def analyze(request: AnalyzeRequest):
+    """
+    Analyze data and provide insights
+    """
+    print(f"🔍 Apollo analyzing {request.data_type}")
+    
+    # Generate analysis based on data type
+    if request.data_type == "portfolio":
+        analysis = analyze_portfolio(request.data)
+    elif request.data_type == "code":
+        analysis = analyze_code(request.data)
+    elif request.data_type == "document":
+        analysis = analyze_document(request.data)
+    else:
+        analysis = "Analysis for this data type is not yet implemented."
+    
+    return AnalyzeResponse(
+        analysis=analysis,
+        insights=[
+            {"type": "insight", "text": "Sample insight 1"},
+            {"type": "insight", "text": "Sample insight 2"}
+        ],
+        recommendations=[
+            {"action": "diversify", "reason": "Portfolio concentration risk"},
+            {"action": "rebalance", "reason": "Asset allocation drift"}
+        ]
+    )
+
+# ============================================================================
+# Permissions
+# ============================================================================
+
+@app.get("/api/permissions/{user_id}")
+async def get_permissions(user_id: str):
+    """Get user's permissions"""
+    user_perms = permissions.get(user_id, [])
+    return {"permissions": user_perms}
+
+@app.post("/api/permissions/grant")
+async def grant_permission(request: PermissionRequest):
+    """Grant Apollo permission to access another service"""
+    if request.user_id not in permissions:
+        permissions[request.user_id] = []
+    
+    # Check if permission already exists
+    for perm in permissions[request.user_id]:
+        if (perm.from_service == request.from_service and 
+            perm.to_service == request.to_service):
+            perm.granted = True
+            perm.scopes = request.scopes
+            perm.granted_at = datetime.utcnow().isoformat()
+            return {"status": "updated", "permission": perm}
+    
+    # Create new permission
+    new_perm = Permission(
+        user_id=request.user_id,
+        from_service=request.from_service,
+        to_service=request.to_service,
+        scopes=request.scopes,
+        granted=True,
+        granted_at=datetime.utcnow().isoformat()
+    )
+    
+    permissions[request.user_id].append(new_perm)
+    
+    return {"status": "granted", "permission": new_perm}
+
+@app.post("/api/permissions/revoke")
+async def revoke_permission(request: PermissionRequest):
+    """Revoke a permission"""
+    if request.user_id not in permissions:
+        raise HTTPException(status_code=404, detail="No permissions found")
+    
+    for perm in permissions[request.user_id]:
+        if (perm.from_service == request.from_service and 
+            perm.to_service == request.to_service):
+            perm.granted = False
+            return {"status": "revoked"}
+    
+    raise HTTPException(status_code=404, detail="Permission not found")
+
+@app.get("/api/permissions/check")
+async def check_permission(
+    user_id: str,
+    from_service: str,
+    to_service: str,
+    scopes: List[str]
+):
+    """Check if a permission exists"""
+    user_perms = permissions.get(user_id, [])
+    
+    for perm in user_perms:
+        if (perm.from_service == from_service and 
+            perm.to_service == to_service and 
+            perm.granted):
+            # Check if all required scopes are granted
+            if all(scope in perm.scopes for scope in scopes):
+                return {"allowed": True}
+    
+    return {"allowed": False}
+
+# ============================================================================
+# Context Management
+# ============================================================================
+
+@app.post("/api/context/add")
+async def add_context(user_id: str, service: str, context: Dict[str, Any]):
+    """Add context data for a user from a service"""
+    if user_id not in user_contexts:
+        user_contexts[user_id] = {}
+    
+    user_contexts[user_id][service] = {
+        "data": context,
+        "updated_at": datetime.utcnow().isoformat()
+    }
+    
+    return {"status": "added"}
+
+@app.get("/api/context/{user_id}")
+async def get_context(user_id: str, service: Optional[str] = None):
+    """Get context for a user"""
+    if user_id not in user_contexts:
+        return {"context": {}}
+    
+    if service:
+        return {"context": user_contexts[user_id].get(service, {})}
+    else:
+        return {"context": user_contexts[user_id]}
+
+# ============================================================================
+# Helper Functions
+# ============================================================================
+
+async def generate_response(
+    message: str,
+    context: Optional[Dict],
+    service: str,
+    user_id: str
+) -> str:
+    """
+    Generate contextual response based on service and user context
+    """
+    # TODO: Integrate with Ollama/OpenAI
+    # For now, return context-aware responses
+    
+    message_lower = message.lower()
+    
+    # Delt-specific responses
+    if service == "delt":
+        if "portfolio" in message_lower:
+            return "☀️ Let me analyze your portfolio. Based on your current holdings, you have a well-diversified allocation with BTC (45%), ETH (30%), and SOL (25%). Your portfolio is up 12.5% this month. Would you like me to suggest rebalancing opportunities?"
+        elif "tax" in message_lower:
+            return "☀️ For tax planning, I can see you have $8,450 in realized capital gains this year. Based on your holdings and current market prices, if you sell now, your estimated tax liability would be around $2,028 (24% bracket). Want me to generate a detailed tax report?"
+        elif "buy" in message_lower or "sell" in message_lower:
+            return "☀️ I can help with that trade. Before proceeding, let me check: What's your reasoning for this trade? I want to make sure it aligns with your risk tolerance and overall strategy."
+        elif "strategy" in message_lower or "recommend" in message_lower:
+            return "☀️ Based on current market conditions and your portfolio, I'm seeing a potential mean reversion opportunity in ETH. RSI is at 32 (oversold), and price is 3.2% below the 20-day MA. Historical data shows this setup has a 68% win rate. Interested in learning more?"
+    
+    # Akashic-specific responses
+    elif service == "akashic":
+        if "generate" in message_lower or "create" in message_lower:
+            return "☀️ I can generate a trading strategy for you! What type of strategy are you looking for? I can create momentum, mean reversion, arbitrage, or custom strategies based on your specific requirements. Just describe what you want to achieve."
+        elif "fix" in message_lower or "bug" in message_lower or "error" in message_lower:
+            return "☀️ I see you're having an issue with your code. Let me take a look... I found the problem! You're trying to access `price[-1]` on the first tick when there's no historical data yet. I can fix this by adding a check for data availability. Want me to update the code?"
+        elif "explain" in message_lower:
+            return "☀️ This strategy uses a mean reversion approach. It waits for the RSI to drop below 30 (indicating oversold conditions) and the price to be at least 2% below the 20-day moving average. When both conditions are met, it enters a long position. For exit, it waits for RSI to rise above 70 (overbought) or hits a 2% stop loss. It's designed for ranging markets where prices oscillate around a mean."
+        elif "optimize" in message_lower:
+            return "☀️ I can optimize this strategy! I've analyzed similar strategies and found that adding a volatility filter (ATR) improves performance by 8.3%. Also, using a trailing stop instead of a fixed stop loss increases the Sharpe ratio from 1.6 to 2.1. Want me to implement these improvements?"
+    
+    # Atlas-specific responses
+    elif service == "atlas":
+        if "document" in message_lower:
+            return "☀️ I can help process documents. What type of document are you working with? I can extract data from invoices, contracts, receipts, and more. Just upload the document and I'll analyze it for you."
+        elif "email" in message_lower:
+            return "☀️ I can help manage your business emails. I can extract transaction details from receipts, categorize expenses, and even draft responses. What would you like me to do?"
+        elif "finance" in message_lower or "expense" in message_lower:
+            return "☀️ Looking at your business finances, I see total expenses of $12,450 this month. The largest categories are: Software/Tools (32%), Marketing (28%), and Operations (25%). Want me to generate a detailed report or export to Wave?"
+    
+    # Generic helpful response
+    return f"☀️ I'm Apollo, your AI assistant! I can help you with {service}. Ask me anything about portfolio analysis, trading strategies, code generation, or business operations. What would you like to know?"
+
+def generate_actions(message: str, service: str) -> List[Dict[str, Any]]:
+    """Generate action buttons based on context"""
+    actions = []
+    
+    message_lower = message.lower()
+    
+    if "portfolio" in message_lower and service == "delt":
+        actions.append({"label": "View Details", "action": "navigate", "route": "/portfolio"})
+        actions.append({"label": "Rebalance", "action": "navigate", "route": "/rebalance"})
+    
+    if "tax" in message_lower:
+        actions.append({"label": "Generate Report", "action": "navigate", "route": "/tax"})
+        actions.append({"label": "Export", "action": "export_tax"})
+    
+    if "strategy" in message_lower and service == "akashic":
+        actions.append({"label": "View Code", "action": "navigate", "route": "/akashic/editor"})
+        actions.append({"label": "Backtest", "action": "navigate", "route": "/akashic/backtest"})
+    
+    return actions
+
+def generate_suggestions(message: str, service: str) -> List[str]:
+    """Generate follow-up suggestions"""
+    suggestions = []
+    
+    if service == "delt":
+        suggestions = [
+            "Show me opportunities",
+            "What about tax implications?",
+            "Analyze risk exposure",
+        ]
+    elif service == "akashic":
+        suggestions = [
+            "Generate a new strategy",
+            "Explain this code",
+            "Run a backtest",
+        ]
+    elif service == "atlas":
+        suggestions = [
+            "Process latest emails",
+            "Generate expense report",
+            "Review documents",
+        ]
+    
+    return suggestions
+
+def analyze_portfolio(data: Dict[str, Any]) -> str:
+    """Analyze portfolio data"""
+    return "Portfolio is well-diversified with moderate risk. Sharpe ratio: 1.8, Max drawdown: -12.5%"
+
+def analyze_code(data: Dict[str, Any]) -> str:
+    """Analyze code"""
+    return "Code structure is good. Suggest adding error handling and improving variable names."
+
+def analyze_document(data: Dict[str, Any]) -> str:
+    """Analyze document"""
+    return "Document appears to be a valid invoice. Key terms identified and extracted."
+
+# ============================================================================
+# Main
+# ============================================================================
+
+if __name__ == "__main__":
+    print("☀️ Starting Apollo AI Service...")
+    print("🌐 Running on http://0.0.0.0:8082")
+    print("📚 Docs available at http://0.0.0.0:8082/docs")
+    
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=8082,
+        reload=True
+    )
+

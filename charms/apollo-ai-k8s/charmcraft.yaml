@@ -1,0 +1,73 @@
+name: apollo-ai-k8s
+type: charm
+title: Apollo AI Assistant
+summary: Universal AI assistant for all ColossalCapital applications
+description: |
+  Apollo provides intelligent, context-aware assistance across the entire
+  ColossalCapital ecosystem. Built with Rust and Axum for high performance
+  to handle heavy concurrent load from all applications.
+  
+  Features:
+  - Chat assistance for Delt, Atlas, and Akashic
+  - Portfolio analysis and trading insights
+  - Code generation and debugging help
+  - Business operations and document processing
+  - Cross-service intelligence with permission system
+  - Personal and collective learning
+  - High-performance Rust/Axum backend (50,000+ req/sec)
+  
+  Integrations:
+  - Ollama for local LLM inference
+  - PostgreSQL for user data and permissions
+  - Redis for caching
+  - Hermes API for market data access
+  
+  Used by:
+  - Delt (trading insights + code editor assistance)
+  - Atlas (business operations)
+
+bases:
+  - build-on:
+      - name: ubuntu
+        channel: "22.04"
+    run-on:
+      - name: ubuntu
+        channel: "22.04"
+
+parts:
+  charm:
+    plugin: python
+    source: .
+    python-packages:
+      - ops
+      - pydantic
+
+containers:
+  apollo:
+    resource: apollo-image
+
+resources:
+  apollo-image:
+    type: oci-image
+    description: Apollo AI service container image
+
+requires:
+  database:
+    interface: postgresql_client
+  cache:
+    interface: redis
+  llm:
+    interface: http  # Ollama
+  vector-db:
+    interface: http  # Weaviate (optional)
+  hermes:
+    interface: http  # For Delt data
+  materialize:
+    interface: postgresql_client  # For market data queries
+
+provides:
+  ai-assistant:
+    interface: http
+  metrics-endpoint:
+    interface: prometheus_scrape
+

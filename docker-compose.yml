@@ -1,0 +1,195 @@
+version: '3.8'
+
+# Apollo - All-in-One AI System
+# Includes: 42+ agents, Agentic RAG, AI models, Theta GPU integration
+
+services:
+  # ========================================
+  # APOLLO API SERVER
+  # ========================================
+  
+  apollo-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apollo-api
+    ports:
+      - "8002:8002"  # Main API
+      - "8003:8003"  # Agentic RAG
+      - "8004:8004"  # Learning System
+    environment:
+      # Atlas integration
+      - ATLAS_API_URL=${ATLAS_API_URL:-http://host.docker.internal:8000}
+      - QDRANT_URL=${QDRANT_URL:-http://host.docker.internal:6333}
+      - POSTGRES_URL=${POSTGRES_URL:-postgresql://atlas:atlas-secure-password@host.docker.internal:5432/atlas}
+      - REDIS_URL=${REDIS_URL:-redis://host.docker.internal:6379}
+      
+      # AI Model endpoints (internal)
+      - LLAMA_CPP_URL=http://llama-cpp:8080
+      - VISION_URL=http://vision:8080
+      - WHISPER_URL=http://whisper:9000
+      
+      # Theta GPU training
+      - THETA_API_KEY=${THETA_API_KEY:-}
+      - THETA_API_ENDPOINT=https://api.thetaedgecloud.com/v1
+      - THETA_ENABLED=true
+      
+      # Agent configs
+      - LOG_LEVEL=INFO
+      - MAX_CONCURRENT_AGENTS=5
+      - AGENTIC_RAG_INTERVAL=300
+      
+      # Model configs
+      - DEFAULT_LLM=phi-2
+      - DEFAULT_EMBEDDING=bge-small
+      
+      # Filecoin model distribution
+      - FILECOIN_REGISTRY_ENABLED=true
+      - FILECOIN_REGISTRY_URL=https://registry.atlas.ai
+      
+      # Agent-specific configs
+      - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID:-}
+      - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET:-}
+    volumes:
+      - /Users/leonard/Documents/repos:/repos:ro
+      - ./models:/models
+      - apollo_cache:/cache
+      - ./generated_docs:/app/generated_docs
+    depends_on:
+      - llama-cpp
+      - vision
+      - whisper
+    networks:
+      - apollo-network
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 2G
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ========================================
+  # AI MODELS (from old Atlas stack)
+  # ========================================
+
+  # llama.cpp Server - Quantized Models
+  llama-cpp:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    container_name: apollo-llama-cpp
+    ports:
+      - "11434:8080"
+    volumes:
+      - ./models:/models
+      - llama_models:/root/.cache
+    environment:
+      - MODEL=/models/phi-2-Q4_K_M.gguf
+      - N_GPU_LAYERS=0
+      - CONTEXT_SIZE=4096
+    command: >
+      --host 0.0.0.0
+      --port 8080
+      --model /models/phi-2-Q4_K_M.gguf
+      --ctx-size 4096
+      --threads 4
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 2G
+    networks:
+      - apollo-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Vision Model (MobileVLM V2)
+  vision:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    container_name: apollo-vision
+    ports:
+      - "11435:8080"
+    volumes:
+      - ./models:/models
+    command: >
+      --host 0.0.0.0
+      --port 8080
+      --model /models/mobilevlm-model-q4_k.gguf
+      --mmproj /models/mobilevlm-mmproj-f16.gguf
+      --ctx-size 2048
+      --threads 2
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    networks:
+      - apollo-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Whisper - Speech-to-Text
+  whisper:
+    image: onerahmet/openai-whisper-asr-webservice:latest
+    container_name: apollo-whisper
+    ports:
+      - "9002:9000"
+    environment:
+      - ASR_MODEL=tiny
+      - ASR_ENGINE=faster_whisper
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 500M
+    networks:
+      - apollo-network
+    restart: unless-stopped
+
+networks:
+  apollo-network:
+    driver: bridge
+
+volumes:
+  llama_models:
+  apollo_cache:
+
+# ========================================
+# RESOURCE SUMMARY (Apollo)
+# ========================================
+# Apollo AI System:
+# - apollo-api:     2GB  (Python + FastAPI + agents)
+# - llama-cpp:      2GB  (Phi-2 model)
+# - vision:         2GB  (MobileVLM)
+# - whisper:        500MB (Speech-to-text)
+# --------------------------------
+# TOTAL:            ~6.5GB
+#
+# Features:
+# - 42+ specialized agents
+# - Agentic RAG (codebase management)
+# - Theta GPU integration (training)
+# - LangChain orchestration
+# - All AI models managed by Apollo
+#
+# Usage:
+# docker-compose up -d
+#
+# Endpoints:
+# - Main API:       http://localhost:8002
+# - Agentic RAG:    http://localhost:8003
+# - Learning:       http://localhost:8004
+# - LLM:            http://localhost:11434
+# - Vision:         http://localhost:11435
+# - Whisper:        http://localhost:9002
